@@ -1,19 +1,21 @@
-# Stroke Brain Prediction Agent
+# 🧠 Stroke Brain Prediction Agent
 
-## Developed By
-Kethavarapu Divya
+A Machine Learning web application that predicts the risk of brain stroke using patient health information.
 
-## Technologies Used
+## 👩‍💻 Developed By
+**Kethavarapu Divya**
+
+## 🛠 Technologies Used
 - Python
 - Flask
 - HTML
 - CSS
 - Scikit-learn
 
-## Machine Learning Model
+## 🤖 Machine Learning Model
 - Random Forest
 
-## Features
+## ✨ Features
 - Predicts stroke risk
 - Simple web interface
-- Fast prediction 
+- Fast prediction
