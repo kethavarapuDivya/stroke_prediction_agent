@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Brain Stroke Prediction System</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="logo">
+
+🧠 Stroke AI
+
+</div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#predict">Prediction</a></li>
+
+<li><a href="#about">About</a></li>
+
+</ul>
+
+</nav>
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>
+
+Brain Stroke Prediction
+
+</h1>
+
+<h3>
+
+Early Detection Saves Lives
+
+</h3>
+
+<p>
+
+Artificial Intelligence based Brain Stroke Prediction using
+Machine Learning.
+
+Enter the patient details and predict stroke risk instantly.
+
+</p>
+
+<a href="#predict">
+
+<button>
+
+Predict Now
+
+</button>
+
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="{{ url_for('static', filename='images/brain.png') }}">
+
+</div>
+
+</section>
+
+<!-- ================= FORM ================= -->
+
+<section id="predict">
+
+<div class="form-card">
+
+<h2>
+
+Patient Details
+
+</h2>
+
+<form action="/predict" method="POST">
+    <!-- Gender -->
+<label>Gender</label>
+<select name="gender" required>
+    <option value="">Select Gender</option>
+    <option value="1">Male</option>
+    <option value="0">Female</option>
+</select>
+
+<!-- Age -->
+<label>Age</label>
+<input type="number" name="age" step="0.1" placeholder="Enter Age" required>
+
+<!-- Hypertension -->
+<label>Hypertension</label>
+<select name="hypertension" required>
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+</select>
+
+<!-- Heart Disease -->
+<label>Heart Disease</label>
+<select name="heart_disease" required>
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+</select>
+
+<!-- Ever Married -->
+<label>Ever Married</label>
+<select name="ever_married" required>
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+</select>
+
+<!-- Work Type -->
+<label>Work Type</label>
+<select name="work_type" required>
+    <option value="0">Private</option>
+    <option value="1">Self-employed</option>
+    <option value="2">Govt Job</option>
+    <option value="3">Children</option>
+    <option value="4">Never Worked</option>
+</select>
+
+<!-- Residence -->
+<label>Residence Type</label>
+<select name="Residence_type" required>
+    <option value="0">Rural</option>
+    <option value="1">Urban</option>
+</select>
+
+<!-- Glucose -->
+<label>Average Glucose Level</label>
+<input type="number" step="0.01" name="avg_glucose_level"
+placeholder="Enter Glucose Level" required>
+
+<!-- BMI -->
+<label>BMI</label>
+<input type="number" step="0.1" name="bmi"
+placeholder="Enter BMI" required>
+
+<!-- Smoking -->
+<label>Smoking Status</label>
+<select name="smoking_status" required>
+    <option value="0">Never Smoked</option>
+    <option value="1">Formerly Smoked</option>
+    <option value="2">Smokes</option>
+    <option value="3">Unknown</option>
+</select>
+
+<button class="predict-btn" type="submit">
+🧠 Predict Stroke
+</button>
+
+</form>
+
+{% if prediction_text %}
+<div class="result-card">
+
+<h2>{{ prediction_text }}</h2>
+
+</div>
+{% endif %}
+
+</div>
+
+</section>
+<!-- ================= ABOUT STROKE ================= -->
+
+<section id="about" class="about">
+
+    <h2>About Brain Stroke</h2>
+
+    <p>
+        Brain stroke is a serious medical condition that occurs when blood flow
+        to the brain is interrupted. Early detection can save lives.
+        Our AI model helps estimate stroke risk based on patient health data.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>⚠ Symptoms</h3>
+
+            <ul>
+                <li>Sudden weakness</li>
+                <li>Difficulty speaking</li>
+                <li>Blurred vision</li>
+                <li>Severe headache</li>
+                <li>Loss of balance</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🛡 Prevention</h3>
+
+            <ul>
+
+                <li>Exercise Daily</li>
+                <li>Healthy Diet</li>
+                <li>Control Blood Pressure</li>
+                <li>Quit Smoking</li>
+                <li>Regular Health Checkups</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>🧠 Brain Stroke Prediction System</h3>
+
+    <p>
+        Developed by <strong>Dharani Naidu</strong>
+    </p>
+
+    <p>
+        Machine Learning Project | Random Forest | Flask | Python
+    </p>
+
+    <p>
+        © 2026 All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>
